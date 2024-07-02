@@ -35,9 +35,8 @@ const questions = [
       { text: "Hawaii", correct: false },
     ],
   },
-
   {
-    question: " Which is the richest country in the world",
+    question: "Which is the richest country in the world?",
     answers: [
       { text: "Qatar", correct: true },
       { text: "Russia", correct: false },
@@ -58,30 +57,75 @@ function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
   nextButton.innerHTML = "Next";
+  nextButton.style.display = "none";
   showQuestion();
 }
 
 function showQuestion() {
   resetState();
 
-  let currentQuestion = question[currentQuestionIndex];
+  let currentQuestion = questions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
-  questionElement.innerHTML = questionNo + "." + currentQuestion.question;
+  questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerHTML = answer.text;
-    button.classList.add(".btn");
+    button.classList.add("btn");
     answerButtons.appendChild(button);
+    if (answer.correct) {
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
   });
 }
 
 function resetState() {
-
-    nextButton.style.display= "none"
-
-    while(answerButtons.firstChild){
-        answerButtons.removeChild(answerButtons.firstChild);
-    }
+  nextButton.style.display = "none";
+  while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
+  }
 }
+
+function selectAnswer(e) {
+  const selectedBtn = e.target;
+  const isCorrect = selectedBtn.dataset.correct === "true";
+  
+  if (isCorrect) {
+    selectedBtn.classList.add("correct");
+    score++;
+  } else {
+    selectedBtn.classList.add("incorrect");
+  }
+
+  Array.from(answerButtons.children).forEach((button) => {
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+
+  nextButton.style.display = "block";
+}
+
+nextButton.addEventListener("click", handleNextButton);
+
+function handleNextButton() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
+}
+
+function showScore() {
+  resetState();
+  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+  nextButton.innerHTML = "Restart";
+  nextButton.style.display = "block";
+  nextButton.removeEventListener("click", handleNextButton);
+  nextButton.addEventListener("click", startQuiz);
+}
+
 startQuiz();
