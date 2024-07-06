@@ -56,15 +56,21 @@
     cursor: pointer;
 
 }
-.input-box input::-webkit-calender-picker-indicator{
+.input-box input::-webkit-calendar-picker-indicator {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    height: auto;
     width: auto;
-    position: absolute;
-    background-position: calc(100%-10px);
-    background-size: 30px;
+    height: auto;
     cursor: pointer;
+    background-position: calc(100% - 10px);
+    background-size: 30px;
+}
+#result{
+    font-size: 20px;
+}
+#result span{
+    color: #ffff76;
 }
