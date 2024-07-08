@@ -65,10 +65,11 @@ body{
     left: -30px;
 }
 .quote-box div{
-    width: 100%;
+    /* width: 100%; */
     margin: 50px;
     display: flex;
     justify-content: center;
+   
 }
 .quote-box button{
     background: rgb(23,124,229);
@@ -78,9 +79,18 @@ body{
     width: 150px;
     height: 50px;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     margin: 5px ;
     cursor: pointer;
+
+}
+.quote-box button img{
+    width: 20px;
+    margin-right: 10px;
+}
+.quote-box button:nth-child(2){
+    background: transparent;
+    color: #333;
 
 }
