@@ -14,29 +14,34 @@
 
       <div class="input-group">
         <label>Full Name</label>
-        <input type="text" placeholder="Enter your name">
+        <input type="text" placeholder="Enter your name" id="contect-name" onkeyup="validateName()">
+        <span id="name-error"></span>
       </div>
 
       <div class="input-group">
-        <label>Phone No.</label>
-        <input type="tel" placeholder="123 456 7890">
+        <label>Phone No. </label>
+        <input type="tel" placeholder="123 456 7890"  id="contect-phone" onkeyup="validatePhoneNo()">
+        <span id="phone-error"></span>
       </div>
 
       <div class="input-group">
-        <label>Email Id</label>
-        <input type="email" placeholder="Enter Email">
+        <label>Email Id </label>
+        <input type="email" placeholder="Enter Email" id="contect-email" onkeyup="validateEmail()">
+        <span id="email-error"></span>
       </div>   
 
       <div class="input-group">
-        <label>Your Message</label>
-        <textarea rows="5" placeholder="Enter your message"></textarea>
+        <label>Your Message </label>
+        <textarea rows="5" placeholder="Enter your message" id="contect-message" onkeyup="validateMessage()"></textarea >
+        <span id="message-error"></span>
       </div>
 
-    <button>Submit</button>
+    <button onclick="return validateForm()">Submit</button>
+    <span id="submit-error"></span>
    
   </form>
   
   </div>
-   
+   <script src="script.js"></script>
 </body>
 </html>
