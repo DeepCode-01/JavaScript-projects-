@@ -7,3 +7,51 @@
     font-family: "Roboto";
 
 }
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #d0eaff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product{
+    width: 90%;
+    max-width: 750px;
+    display: flex;
+}
+.gallery{
+   flex-basis: 47%;
+   background: #241e20;
+   transform: scale(1.08);
+   box-shadow: -10px 5px 10px 10px rgba(0,0,0,0.1);
+}
+.gallery img{
+    display: block;
+    width: 100%;
+    padding-top: 100px;
+
+}
+.details{
+    flex-basis: 53%;
+    background: #fff;
+    padding: 40px;
+    padding-left: 60px;
+    box-shadow: -10px 5px 10px 10px rgba(0,0,0,0.1);
+    font-size: 14px;
+    font-weight: 600;
+    color: #777;
+}
+.details h1{
+    font-size: 35px;
+    color: #333;
+}
+.details h2{
+    font-size: 30px;
+    color: #555;
+    font-weight: 600;
+}
+.details h3{
+    color: #00d874;
+    margin-bottom: 20px;
+}
