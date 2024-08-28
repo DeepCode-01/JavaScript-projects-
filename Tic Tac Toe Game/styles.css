@@ -49,3 +49,33 @@ html{
     margin:1.5em auto 0 auto;
     display: block;
 }
+.popup{
+    background: linear-gradient(135deg, #8052ec ,#d161ff);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 12vmin;
+}
+#new-game{
+    padding: 0.5em 1em;
+    background: #0a0029;
+    color:#ffffff;
+    font-size: 0.6em;
+    color: #fff;
+    border-radius: 0.2em;
+    border: none;
+}
+#message{
+    color: #fff;
+    text-align: center;
+    font-size: 1em;
+}
+.hide{
+    display: none;
+}
