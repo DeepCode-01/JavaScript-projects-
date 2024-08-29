@@ -1,4 +1,4 @@
-plet result = document.getElementById("result");
+let result = document.getElementById("result");
 let searchBtn = document.getElementById("search");
 
 let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
@@ -38,7 +38,7 @@ fetch(url + "pizza")
     <div id="ingradient-con"></div>
      <div id="recipe">
      <button id="hide-recipe">X</button>
-     <pre id="intructions>${myMeal.strInstructions}</pre>
+     <p id="instructions>${myMeal.strInstructions}</p>
      </div>
     `
   });
