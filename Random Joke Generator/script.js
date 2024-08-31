@@ -1,0 +1,1 @@
+const jokeContainer = document.getElementById("joke")
