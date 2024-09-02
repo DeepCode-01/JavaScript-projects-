@@ -50,6 +50,9 @@ body {
     font-size: 14px;
 
 }
+.search-box button:hover{
+    cursor: pointer;
+}
 
 .result {
     position: relative;
