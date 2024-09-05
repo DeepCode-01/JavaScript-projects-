@@ -5,5 +5,34 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto";
+    border: none;
+    outline: none;
 
+}
+body{
+    background: #9873fe;
+}
+.wrapper{
+    width: 90%;
+    max-width: 25em;
+    background-color: #ffffff;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 2em;
+    border-radius: 0.8em;
+}
+.app-details{
+    display: flex;
+   align-items: center;
+    flex-direction: column;
+}
+.app-icon{
+    width: 9.4em;
+}
+.app-title{
+    font-size: 1.3em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
 }

@@ -7,6 +7,23 @@
     <title>Currency Converter</title>
 </head>
 <body>
+    <div class="wrapper">
+        <div class="app-details">
+            <img class="app-icon"  src="exchanging.png" alt="">
+            <h1 class="app-title">
+                Currency Converter
+            </h1>
+        </div>
+        <label for="amount">Amount:</label>
+        <input type="number" name="" id="amount" value="100">
+        <div class="dropdown">
+            <select name="" id="from-currency-select"></select>
+            <select name="" id="to-currency-select"></select>
+        </div>
+        <button class="convert-button">Convert</button>
+        <p id="result"></p>
+    </div>
+    <script src="api-key.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
