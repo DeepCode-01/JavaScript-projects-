@@ -44,11 +44,49 @@ body{
 }
 #name{
     padding: 0.8em 0.5em;
-    border: 2px solid #020332;
+    border: 1px solid #020332;
     border-radius: 0.5em;
 }
 #submit{
     background-color: #7e5eff;
     color: #ffffff;
     border-radius: 0.5em;
+}
+#submit:hover{
+    cursor: pointer;
+}
+#gender-icon{
+    display: block;
+    width: 5em;
+    position: relative;
+    margin: 2em auto 1em auto;
+    border-radius: 1em;
+}
+.Male{
+    background-color: #5a72e9;
+}
+.Female{
+    background-color: #ff5f96;
+}
+#info{
+    padding: 2em 1em  ;
+    text-align: center;
+    border-radius: 0.9em;
+}
+#result-name{
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #edecec;
+}
+#gender{
+    color: #ffffff;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+#prob{
+    letter-spacing: 0.2em;
+    font-weight: 400;
+color: #edecec;
+margin-top: 0.4em;
 }
