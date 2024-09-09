@@ -104,3 +104,34 @@ body {
 .hide {
     display: none;
 }
+.control-container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #f4c531;
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+#start-btn{
+    font-size: 1.2em;
+    font-weight: 500;
+    background-color: #ffffff;
+    color: #23234c;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.8em 1.8em;
+    border-radius: 0.3em;
+    
+}
+#result{
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    color: #23234c;
+}
+#result span{
+    font-weight: 600;
+}

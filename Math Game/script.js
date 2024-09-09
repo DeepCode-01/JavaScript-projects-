@@ -10,8 +10,7 @@ const errorMassage = document.getElementById("error-msg");
 let answerValue;
 let operatorQuestions;
 
-// random value generator
-
+// Random value generator
 const randomValue = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const questionsGenerator = () => {
@@ -23,8 +22,8 @@ const questionsGenerator = () => {
     [num1, num2] = [num2, num1];
   }
 
-  // solve eqaution
-  let solution = eval(`${num1}${randomOperator} ${num2}`);
+  // Solve equation
+  let solution = eval(`${num1} ${randomOperator} ${num2}`);
 
   let randomVar = randomValue(1, 5);
   if (randomVar == 1) {
@@ -39,20 +38,18 @@ const questionsGenerator = () => {
     answerValue = randomOperator;
     operatorQuestions = true;
     Questions.innerHTML = `${num1} <input type="text" id="input-val" placeholder="?"/> ${num2} = ${solution}`;
-  } 
-  else {
+  }
+   else {
     answerValue = solution;
     Questions.innerHTML = `${num1} ${randomOperator} ${num2} = <input type="number" id="input-val" placeholder="?"/>`;
   }
 
-  // input check
-
+  // Input check
   submitBtn.addEventListener("click", () => {
     errorMassage.classList.add("hide");
     let userInput = document.getElementById("input-val").value;
 
     if (userInput) {
-
       if (userInput == answerValue) {
         stopGame(`Yippie!! <span>Correct</span> Answer`);
       } 
@@ -60,31 +57,32 @@ const questionsGenerator = () => {
         errorMassage.classList.remove("hide");
         errorMassage.innerHTML = "Please enter a valid operator";
       } 
-      
-    else {
-        stopGame(`Opps!! <span>Wrong</span> Answer`)
+      else {
+        stopGame(`Opps!! <span>Wrong</span> Answer`);
       }
     } 
     else {
-        errorMassage.classList.remove("hide");
-        errorMassage.innerHTML="Input can't be empty"
+      errorMassage.classList.remove("hide");
+      errorMassage.innerHTML = "Input can't be empty";
     }
   });
 };
 
-// start game
-
+// Start game
 startBtn.addEventListener("click", () => {
   operatorQuestions = false;
   answerValue = "";
   errorMassage.innerHTML = "";
   errorMassage.classList.add("hide");
+
+  controls.classList.add("hide");
+  startBtn.classList.add("hide");
   questionsGenerator();
 });
 
 const stopGame = (resultText) => {
   result.innerHTML = resultText;
   startBtn.innerText = "Restart";
-  // controls.classList.remove('hide');
-  // startBtn.classList.add("hide")
+  controls.classList.remove("hide");
+  startBtn.classList.remove("hide");
 };
