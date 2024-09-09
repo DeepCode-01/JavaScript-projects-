@@ -48,6 +48,9 @@ body {
     padding: 0.6em 2em;
 
 }
+.container #questions{
+    background-color: #eeedf1;
+}
 #error-msg{
     text-align: center;
     margin-top: 1em;
