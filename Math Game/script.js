@@ -10,7 +10,8 @@ const errorMassage = document.getElementById("error-msg");
 let answerValue;
 let operatorQuestions;
 
-// Random value generator
+// random value generator
+
 const randomValue = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const questionsGenerator = () => {
@@ -22,29 +23,27 @@ const questionsGenerator = () => {
     [num1, num2] = [num2, num1];
   }
 
-  // Solve equation
-  let solution = eval(`${num1} ${randomOperator} ${num2}`);
+  // solve eqaution
+  let solution = eval(`${num1}${randomOperator} ${num2}`);
 
   let randomVar = randomValue(1, 5);
   if (randomVar == 1) {
     answerValue = num1;
     Questions.innerHTML = `<input type="number" id="input-val" placeholder="?"/> ${randomOperator} ${num2} = ${solution}`;
-  } 
-  else if (randomVar == 2) {
+  } else if (randomVar == 2) {
     answerValue = num2;
     Questions.innerHTML = `${num1} ${randomOperator} <input type="number" id="input-val" placeholder="?"/> = ${solution}`;
-  } 
-  else if (randomVar == 3) {
+  } else if (randomVar == 3) {
     answerValue = randomOperator;
     operatorQuestions = true;
     Questions.innerHTML = `${num1} <input type="text" id="input-val" placeholder="?"/> ${num2} = ${solution}`;
-  }
-   else {
+  } else {
     answerValue = solution;
     Questions.innerHTML = `${num1} ${randomOperator} ${num2} = <input type="number" id="input-val" placeholder="?"/>`;
   }
 
-  // Input check
+  // input check
+
   submitBtn.addEventListener("click", () => {
     errorMassage.classList.add("hide");
     let userInput = document.getElementById("input-val").value;
@@ -52,28 +51,26 @@ const questionsGenerator = () => {
     if (userInput) {
       if (userInput == answerValue) {
         stopGame(`Yippie!! <span>Correct</span> Answer`);
-      } 
-      else if (operatorQuestions && !operators.includes(userInput)) {
+      } else if (operatorQuestions && !operators.includes(userInput)) {
         errorMassage.classList.remove("hide");
         errorMassage.innerHTML = "Please enter a valid operator";
-      } 
-      else {
+      } else {
         stopGame(`Opps!! <span>Wrong</span> Answer`);
       }
-    } 
-    else {
+    } else {
       errorMassage.classList.remove("hide");
       errorMassage.innerHTML = "Input can't be empty";
     }
   });
 };
 
-// Start game
+// start game
+
 startBtn.addEventListener("click", () => {
   operatorQuestions = false;
   answerValue = "";
   errorMassage.innerHTML = "";
-  errorMassage.classList.add("hide");
+  err.classList.add("hide");
 
   controls.classList.add("hide");
   startBtn.classList.add("hide");
