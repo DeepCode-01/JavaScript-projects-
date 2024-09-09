@@ -9,10 +9,12 @@
     outline: none;
 
 }
-body{
+
+body {
     background: #f4c531;
 }
-.container{
+
+.container {
     background: #ffffff;
     width: 90%;
     max-width: 31.2em;
@@ -23,10 +25,36 @@ body{
     padding: 5em 3em;
     border-radius: 0.5em;
 }
-.container h3{
+
+.container h3 {
     font-size: 1.2em;
     color: #23234c;
     text-align: center;
     font-weight: 500;
     line-height: 1.8em;
+}
+
+.container #submit-btn {
+    font-size: 1.2em;
+    font-weight: 500;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    background: #f4c531;
+    border-radius: 0.3em;
+    border: 0;
+    outline: 0;
+    color: #23234c;
+    padding: 0.6em 2em;
+
+}
+#error-msg{
+    text-align: center;
+    margin-top: 1em;
+    background-color: #ffdde0;
+    color: #d62f2f;
+    padding: 0.2em 0;
+}
+.hide{
+    display: none;
 }
