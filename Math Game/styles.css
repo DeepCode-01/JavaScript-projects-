@@ -104,6 +104,9 @@ body {
 .hide {
     display: none;
 }
+.control-container.hide{
+    display: none;
+}
 .control-container{
     position: absolute;
     display: flex;
