@@ -9,3 +9,66 @@
     outline: none;
 
 }
+body{
+    background-color: #eff3ff;
+}
+.container{
+    width: 320px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+     top: 50%;
+    left: 50%;
+}
+#card{
+    position: relative;
+    background: radial-gradient(
+        circle at 50% 0% , cyan 36% , #ffffff 37%
+    );
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+}
+#card img{
+    width: 180px;
+    max-height: 200px;
+    display: block;
+    position: relative;
+    margin: 20px auto;
+    
+}
+.hp{
+    width: 80px;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 30px;
+    margin-left: auto;
+    font-weight: 400;
+}
+.poke-name{
+    text-align: center;
+    font-weight: 600;
+}
+.types{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0 40px 0;
+
+}
+.hp span
+.types span
+{
+    font-size: 12px;
+ letter-spacing: 0.4px;
+ font-weight: 600;
+}
+.types span{
+
+}
+.state{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
