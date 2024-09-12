@@ -9,3 +9,51 @@
     outline: none;
 
 }
+:root{
+    --theme-color: #5074f3;
+}
+body{
+    background-color: var(--theme-color);
+}
+.container{
+    width: 90%;
+    max-width: 25em;
+    border: 1px solid black;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    
+}
+.card{
+    width: 100%;
+    padding: 4em 0;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 0.5em;
+}
+.card .img-container{
+    height: 11.25em;
+    width: 11.25em;
+    display: block;
+    margin: -8.7em auto 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 0.3em #ffffff, 0 0 0 0.9em var(--theme-color);
+    border-radius: 50%;
+}
+.img-container img{
+    width: 100%;
+}
+.container button{
+    display: block;
+    font-size: 1.2em;
+    width: 90%;
+    margin: 2em auto 0 auto;
+    padding: 1.2em 0;
+    border-radius: 0.3em;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    color: #000341;
+    cursor: pointer;
+}
