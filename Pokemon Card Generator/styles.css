@@ -72,3 +72,17 @@ body{
     align-items: center;
     justify-content: space-between;
 }
+.state p{
+  color: #404060;  
+}
+#btn{
+    display: block;
+    padding: 15px 60px;
+    background-color: #010101;
+    font-size: 18px;
+    color: #ffffff;
+    position: relative;
+    margin:30px auto;
+    border: none;
+    border-radius: 5px;
+}
