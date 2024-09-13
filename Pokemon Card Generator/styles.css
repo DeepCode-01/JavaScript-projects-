@@ -21,10 +21,7 @@ body{
 }
 #card{
     position: relative;
-    background: radial-gradient(
-        circle at 50% 0% , cyan 36% , #ffffff 37%
-    );
-    width: 100%;
+   width: 100%;
     padding: 30px 20px;
     border-radius: 10px;
     border: 1px solid black;
@@ -65,7 +62,9 @@ body{
  font-weight: 600;
 }
 .types span{
-
+ padding: 5px 20px;
+ border-radius: 20px;
+ color: #ffffff;
 }
 .state{
     display: flex;
@@ -85,4 +84,5 @@ body{
     margin:30px auto;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
