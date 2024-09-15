@@ -9,3 +9,45 @@
     outline: none;
 
 }
+body{
+    height: 100vh;
+    background: linear-gradient(#000000 50%, #ffb92a 50%);
+}
+.container{
+    font-size: 16px;
+    width: 90vw;
+    max-width: 37.5em;
+    padding: 3em 1.8em;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    background-color: #201f28;
+    border-radius: 0.6em;
+    box-shadow: 1.2em 2em 3em rgba(0,0,0,0.2);
+}
+.serach-container{
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 1.3em;
+}
+.serach-container button
+.serach-container input{
+    font-size: 1em;
+    outline: none;
+    border-radius: 0.6em;
+}
+.serach-container input{
+    background: transparent;
+    border: 1pex solid #a0a0a0;
+    padding: 0.7em;
+    color: #ffff;
+}
+.serach-container input:focus{
+ border-color: #ffffff;
+}
+.serach-container button{
+    background-color: #ffb92a;
+    border: none;
+    cursor: pointer;
+}
