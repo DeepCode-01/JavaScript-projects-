@@ -51,3 +51,37 @@ body{
     border: none;
     cursor: pointer;
 }
+#result{
+    color: #ffff;
+}
+#info{
+    position: relative;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    align-items: center;
+    margin-top: 1.2em;
+}
+.poster{
+width: 100%;
+}
+.rating img{
+    width:1.2em;
+}
+h2{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+.rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6em;
+    margin: 0.6em 0 0.9em 0;
+}
+.rating h4{
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: 500;
+}
