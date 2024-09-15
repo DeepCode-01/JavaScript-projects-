@@ -9,12 +9,13 @@ let getMovie = () => {
 
   if (movieName.length <= 0) {
     result.innerHTML = `<h3>Please Enter a Movie Name</h3>`;
-  } else {
+  }
+   else {
     fetch(url)
       .then((resp) => resp.json())
       .then((data) => {
-       
-        result.innerHTML = `<div id="info">
+        result.innerHTML = `
+        <div id="info">
             <img src=${data.Poster} class="poster"/>
             <div>
             <h2>${data.Title}</h2>
@@ -28,7 +29,7 @@ let getMovie = () => {
             <span>${data.Runtime}</span>
             </div>
             <div class="genre">
-             <div>${data.Genre.split(",").join("<div></div>")}</div>
+             <div>${data.Genre.split(",").join("</div><div>")}</div>
             </div>
             </div>
             </div>
@@ -41,5 +42,5 @@ let getMovie = () => {
       });
   }
 };
-
+serchBtn.addEventListener("click", getMovie)
 window.addEventListener("load", getMovie);

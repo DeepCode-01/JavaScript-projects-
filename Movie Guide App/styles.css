@@ -35,13 +35,14 @@ body{
 .serach-container input{
     font-size: 1em;
     outline: none;
-    border-radius: 0.6em;
+ 
 }
 .serach-container input{
     background: transparent;
-    border: 1pex solid #a0a0a0;
+    border: 1px solid #a0a0a0;
     padding: 0.7em;
     color: #ffff;
+    border-radius: 0.8em;
 }
 .serach-container input:focus{
  border-color: #ffffff;
@@ -50,6 +51,7 @@ body{
     background-color: #ffb92a;
     border: none;
     cursor: pointer;
+    border-radius: 0.8em;
 }
 #result{
     color: #ffff;
@@ -84,4 +86,38 @@ h2{
     display: inline-block;
     font-size: 1.1em;
     font-weight: 500;
+}
+.details{
+    display: flex;
+    font-size: 0.95em;
+    gap: 1em ;
+    justify-content: center;
+    color: #a0a0a0;
+    margin: 0.6em 0;
+    font-weight: 400;
+}
+.genre{
+    display: flex;
+    justify-content: space-around;
+}
+.genre div{
+    border: 1px solid #a0a0a0;
+    font-size: 0.75em;
+    padding: 0.4em 1.6em;
+    border-radius: 0.4em;
+    font-weight: 300;
+}
+h3{
+    font-weight: 500;
+    margin-top: 1.2em;
+}
+p{
+    font-size: 0.9em;
+    font-weight: 300;
+    line-height: 1.8em;
+    text-align: justify;
+    color: #a0a0a0;
+}
+.msg{
+    text-align: center;
 }
