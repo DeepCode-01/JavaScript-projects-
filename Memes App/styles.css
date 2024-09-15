@@ -11,6 +11,8 @@
 }
 body{
     background-image: url(laughing\ emoji\ background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .container{
     width: 80%;
