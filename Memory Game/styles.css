@@ -9,3 +9,23 @@
     outline: none;
 
 }
+body{
+    background-color: #f4c531;
+}
+.wrapper{
+    box-sizing: border-box;
+    width: 26.7em;
+    padding: 2.5em 3em;
+    background-color: #ffff;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.6em;
+    box-shadow: 0 0.9em 2.3em rgba(86,66,0,0.3);
+}
+.game-container{
+    position: relative;
+    width: 100%;
+    display: grid;
+}
