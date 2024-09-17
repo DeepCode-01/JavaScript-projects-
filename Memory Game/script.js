@@ -97,6 +97,57 @@ for(let i=0; i<size*size; i++){
     
     </div>`
     gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+    cards= document.querySelector(".card-container");
+    cards.forEach((card) => {
+        card.addEventListener("click", ()=>{
+            if(!card.classList.contain("matched")){
+                card.classList.add("flipped")
+
+                if(!firstCard){
+                    firstCard= card;
+                    firstCardValue = card.getAttribute("data-card-value")
+                }
+                else{
+                    movesCount();
+                    secondCard= card;
+    
+                    let secoundCardValue = card.getAttribute("data-card-value")
+                    if(firstCardValue==secoundCardValue){
+                    //   when both cards matched
+    
+                        firstCard.classList.add("matched")
+                        secondCard.classList.add("matched")
+    
+                        firstCard= false;
+    
+                        // win count increment as user select correct match
+    
+                        winCount += 1;
+    
+                        if(winCount == Math.floor(cardValue.length/2)){
+                            result.innerHTML =`<h2>You Won</h2>
+                            <h4>Moves: ${movesCount}</h4> `
+                             stopGame();
+    
+                        }
+    
+                    }
+                    else{
+                            // if the card matched
+                            let [tempFirst, tempSecond]= [firstCard,secondCard]
+                            firstCard= false;
+                            secondCard=false;
+    
+                            let deley = setTimeout(()=>{
+                                tempFirst.classList.remove("flipped");
+                                tempSecond.classList.remove("flipped")
+                            },900)
+                    }
+                }
+            }
+           
+        })
+    });
 }
 }
 
@@ -107,4 +158,28 @@ const initializar= ()=>{
     console.log(cardValue);
     matrixGenerator(cardValue);
 }
-initializar()
+initializar();
+
+startButton.addEventListener("click",()=>{
+    movesCount=0;
+    time= 0;
+    controls.classList.add("hide");
+    stopButton.classList.remove("hide")
+    startButton.classList.add("hide")
+    //  start timmer
+
+    interval = setInterval(timeGenerator,1000)
+    // intial moves
+
+    moves.innerHTML=`<span> Moves:<span/> ${movesCount}`
+    initializar()
+})
+
+//  stop game
+
+stopButton.addEventListener("click",(stopGame)=>{
+    controls.classList.remove("hide");
+    stopButton.classList.add("hide")
+    startButton.classList.hide("hide");
+    clearInterval(interval)
+})
