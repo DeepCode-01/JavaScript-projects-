@@ -83,5 +83,28 @@ const generateRandom = (size=4)=>{
 
 const matrixGenerator = (cardValue, size = 4)=>{
   gameContainer.innerHTML = "";
-  cardValue = []
+  cardValue = [...cardValue,...cardValue];
+
+//   simple suffle
+cardValue.sort(()=> Math.random() -0.5);
+for(let i=0; i<size*size; i++){
+
+    gameContainer.innerHTML+= `<div class="card-container" data-card-value='${cardValue[i].name}'>
+    <div class="card-before">?</div>
+    <div class="card-after">
+    <img src="${cardValue[i].image}" class="image"/>
+    </div>
+    
+    </div>`
+    gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
 }
+}
+
+const initializar= ()=>{
+    result.innerHTML = "";
+    winCount= 0;
+    let cardValue= generateRandom();
+    console.log(cardValue);
+    matrixGenerator(cardValue);
+}
+initializar()

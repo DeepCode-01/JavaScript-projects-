@@ -28,4 +28,9 @@ body{
     position: relative;
     width: 100%;
     display: grid;
+    gap: 0.6em;
+}
+.image{
+    width: 80px;
+    height: 80px;
 }
