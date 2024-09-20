@@ -55,7 +55,7 @@ button#submit-btn{
     color: #ffffff;
     font-size: 1.5em;
     border: none;
-    margin: 1em;
+    margin: 1em 0;
     padding: 0.8em 0;
     border-radius: 0.4em;
     font-family:" Roboto, Mono", monospace;
