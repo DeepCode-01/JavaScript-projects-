@@ -1,0 +1,12 @@
+const pianoKeys = document.querySelectorAll(".piano-keys .key")
+
+let audio = new Audio();
+
+const  playTune =(key)=>{
+
+}
+
+pianoKeys.forEach(key =>{
+    key.addEventListener("click",()=> playTune(key.dataset.key))
+   
+})
