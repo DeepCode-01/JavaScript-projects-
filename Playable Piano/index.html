@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Playable Piano</title>
 </head>
+
 <body>
+    <div class="wrapper">
+        <header>
+            <h1>Playable Piano</h1>
+            <div class="column volume-slider">
+                <span>Volume</span> <input type="range">
+            </div>
+            <div class="column key-checkbox"></div>
+            <span>Show Keys</span> <input type="checkbox">
+
+        </header>
+        <ui class="piano-keys">
+            <li class="key white"> <span>a</span></li>
+            <li class="key black"><span>w</span></li>
+            <li class="key white"><span>s</span></li>
+            <li class="key black"><span>e</span></li>
+            <li class="key white"><span>d</span></li>
+            <li class="key black"><span>f</span></li>
+            <li class="key white"><span>t</span></li>
+            <li class="key black"><span>g</span></li>
+            <li class="key white"><span>y</span></li>
+            <li class="key black"><span>h</span></li>
+            <li class="key white"><span>u</span></li>
+            <li class="key black"><span>j</span></li>
+            <li class="key white"><span>k</span></li>
+            <li class="key black"><span>o</span></li>
+            <li class="key white"><span>l</span></li>
+            <li class="key black"><span>p</span></li>
+            <li class="key white"><span>;</span></li>
+
+
+        </ui>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -9,3 +9,48 @@
     outline: none;
 
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e3f2fd;
+}
+.wrapper{
+    background: #141414;
+    width: 780px;
+    padding: 35px 40px;
+    border-radius:20px ;
+}
+.wrapper header{
+    color: #a2a2a2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header h1{
+    font-size: 1.6em;
+}
+header .column{
+    display: flex;
+    align-items: center;
+}
+header span{
+    font-weight: 500;
+    font-size: 1.19em;
+    margin-right: 15px;
+}
+.volume-slider span{
+    accent-color: #fff;
+}
+.piano-keys .key{
+    list-style: none;
+ color: #a2a2a2;
+}
+.key-checkbox input{
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    background: #4b4b4b;
+    border-radius: 1em;
+}
