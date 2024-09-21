@@ -47,8 +47,8 @@ header span {
     margin-right: 15px;
 }
 
-.volume-slider span {
-    accent-color: #fff;
+.volume-slider input{
+   accent-color: #fff;
 }
 
 
