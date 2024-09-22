@@ -19,43 +19,53 @@
                         <span>Rectangle</span>
                     </li>
                     <li class="option">
-
-                    </li>
-                    <img src="icons/circle.svg" alt="">
-                    <span>Circle</span>
+                        <img src="icons/circle.svg" alt="">
+                        <span>Circle</span>
                     </li>
 
-                    <li class="option"></li>
-                    <img src="icons/triangle.svg" alt="">
-                    <span>Triangle</span>
+                    <li class="option">
+                        <img src="icons/triangle.svg" alt="">
+                        <span>Triangle</span>
                     </li>
 
-                    <li class="option"></li>
-                    <input type="checkbox" id="fill-color">
-                    <label for="fill color">Fill Color</label>
+                    <li class="option">
+                        <input type="checkbox" id="fill-color">
+                        <label for="fill color">Fill Color</label>
                     </li>
                 </ui>
             </div>
 
             <div class="row">
                 <label for="" class="title">Options</label>
-                <ui class="options">
-                    <li class="option">
+                <ui class="options ">
+                    <li class="option active">
                         <img src="icons/brush.svg" alt="">
                         <span>Brush</span>
                     </li>
                     <li class="option">
-    
-                    </li>
                         <img src="icons/eraser.svg" alt="">
                         <span>Eraser</span>
                     </li>
-    
-                    <li class="option"></li>
-                       <input type="range" id="size-slider">
-                      
+
+                    <li class="option">
+                        <input type="range" id="size-slider">
+
                     </li>
                 </ui>
+            </div>
+            <div class="row">
+                <label for="" class="title">Colors</label>
+                <ui class="options">
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                </ui>
+            </div>
+            <div class="row">
+                <button class="clear-canvas">Clear-Canvas</button>
+                <button class="save-img">Save As Image</button>
             </div>
         </section>
         <section class="drawing-board"></section>
