@@ -6,3 +6,40 @@
     box-sizing: border-box;
     font-family: "Roboto";
 }
+body{
+    background-color: #3d64e6;
+}
+.container{
+    width: 80vw;
+    max-width: 37.5em;
+    background-color: #ffffff;
+    padding: 3em 2.5em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 0.7em;
+    box-shadow: 0 1.25em 1.8em rgba(8,21,65,0.25);
+}
+.serach-wrapper{
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 1.25em;
+
+}
+.serach-wrapper button{
+    font-size: 1em;
+    background-color: #3d64e6;
+    color: #ffffff;
+    padding: 0.8em 0;
+    border: none;
+    border-radius: 1.5em;
+}
+.serach-wrapper input{
+    font-size: 1em;
+    padding: 0 0.62em;
+    border: none;
+    border-bottom: 2px solid #3d64e6;
+    outline: none;
+    color: #222a43;
+}
