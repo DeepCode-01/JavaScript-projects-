@@ -94,20 +94,20 @@ section {
     transform: translate(-50% , -50%);
 }
 .colors .option:nth-last-child(5){
-    background: white;
+    background-color: white;
     border: 1px solid #bfbfbf;
 }
 .colors .option:nth-last-child(4){
-    background: #000;
+    background-color: #000;
 }
 .colors .option:nth-last-child(3){
-    background: #E02020;
+    background-color: #E02020;
 }
 .colors .option:nth-last-child(2){
-    background: #6DD400;
+    background-color: #6DD400;
 }
 .colors .option:nth-last-child(1){
-    background: #4A98f7;
+    background-color: #4A98f7;
 }
 .colors .option:last-child.selected::before{
     border-color: #ccc;
