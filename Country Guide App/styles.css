@@ -78,3 +78,6 @@ body{
     font-weight: 400;
     color: #ff465a;
 }
+button:hover{
+    cursor: pointer;
+}
