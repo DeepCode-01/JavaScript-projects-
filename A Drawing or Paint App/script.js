@@ -1,9 +1,10 @@
 const canvas = document.querySelector("canvas");
 toolButton = document.querySelectorAll(".tool");
+fillColor = document.querySelector("#fill-color");
 
 ctx = canvas.getContext("2d");
 
-let prevMouseX, prevMouseY, snapShort;
+let prevMouseX, prevMouseY, snapshot;
 isDrawing = false;
 brushWidth = 5;
 selectedTool = "brush";
@@ -14,12 +15,25 @@ window.addEventListener("load", () => {
 });
 
 const drawRectangle = (e) => {
-  ctx.strokeRect(
+  if (!fillColor.checked) {
+    return ctx.strokeRect(
+      e.offsetX,
+      e.offsetY,
+      prevMouseX - e.offsetX,
+      prevMouseY - e.offsetY
+    );
+  }
+  ctx.fillRect(
     e.offsetX,
     e.offsetY,
     prevMouseX - e.offsetX,
     prevMouseY - e.offsetY
   );
+};
+
+const drawCircle = (e) => {
+  ctx.arc(prevMouseX, prevMouseY, 50, 0, 2 * Math.PI);
+  ctx.stroke(e)
 };
 
 const drawing = (e) => {
@@ -31,18 +45,20 @@ const drawing = (e) => {
     ctx.stroke();
   } else if (selectedTool === "rectangle") {
     drawRectangle(e);
+  } else if (selectedTool === "circle") {
+    drawCircle();
   }
 };
 
 const startDraw = (e) => {
   isDrawing = true;
-  ctx.putImageData(snapShort, 0, 0);
+  ctx.putImageData(snapshot, 0, 0);
   prevMouseX = e.offsetX;
   prevMouseY = e.offsetY;
   // creating the new path
   ctx.beginPath();
   ctx.lineWidth = brushWidth;
-  snapShort = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 };
 
 toolButton.forEach((btn) => {
