@@ -1,4 +1,3 @@
-
 const canvas = document.querySelector("canvas");
 const toolButton = document.querySelectorAll(".tool");
 const fillColor = document.querySelector("#fill-color");
