@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <title>OTP Generator</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
             <input type="text" id="otp-in" placeholder="Enter the OTP sent in your email...">
             <button class="btn" id="otp-btn">Verify OTP</button>
         </div>
-        <button class="btn">Send OTP</button>
+        <button class="btn" onclick="sendOTP()">Send OTP</button>
     </div>
     <script src="script.js"></script>
 </body>
