@@ -6,3 +6,46 @@
     box-sizing: border-box;
     font-family: "Roboto";
 }
+
+body {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+.form {
+    width: 500px;
+    background-color: #eeeeee;
+    padding:  30px;
+    display: grid;
+    gap: 20px;
+   border-radius: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+
+}
+
+.otpverify {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+}
+.btn{
+    padding: 10px;
+    background-color: #82eec1;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+}
+.otpverify{
+    display: none;
+}
