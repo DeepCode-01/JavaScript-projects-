@@ -10,9 +10,9 @@
 <body>
     <div class="form">
         <h1>OTP Generator</h1>
-        <input type="email" id="email" placeholder="Enter your email...">
-        <div class="otpverify">
-            <input type="text" id="otp-in" placeholder="Enter the OTP sent in your email...">
+        <input type="email" id="email" placeholder="Enter your email..." required>
+        <div class="otpverify" style="display: none;"> <!-- Initially hidden -->
+            <input type="text" id="otp-in" placeholder="Enter the OTP sent to your email...">
             <button class="btn" id="otp-btn">Verify OTP</button>
         </div>
         <button class="btn" onclick="sendOTP()">Send OTP</button>

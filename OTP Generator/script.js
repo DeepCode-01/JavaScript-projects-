@@ -7,13 +7,15 @@
     let emailBody = `<h2> Your OTP is ${otp_val}</h2>`
 
   Email.send({
-    SecureToken : " b4338a69-10ca-4084-b051-ce181c23172d",
+    SecureToken : "fe6c82ef-0535-4d65-8f79-95b829de744e",
     To :  email.value,
     From : "dv292901@gmail.com",
     Subject : "Email OTP using Javascript",
     Body : emailBody
 }).then(
+
   message =>{
+    console.log(message)
     if(message === "Ok"){
         alert("OTP sent to your email" + email.value);
         verify.style.display = "flex"
