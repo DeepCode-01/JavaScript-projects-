@@ -64,3 +64,29 @@ input[type="number"]:focus{
     border-color: #025eaa;
     color: #025eaa;
 }
+.sliders{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+input[type="text"]{
+    width: 82%;
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    background-color: #f1eff9;
+    border-radius: 5px;
+}
+button{
+    width: 12%;
+    margin-left: 4%;
+    padding: 10px 0;
+    background-color: #0075ff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 12px;
+}
