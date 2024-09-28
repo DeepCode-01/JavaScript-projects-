@@ -3,6 +3,64 @@
 * {
     margin: 0;
     padding: 0;
+    outline: none;
     box-sizing: border-box;
-    font-family: "Roboto";
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    color: #010120;
+}
+body {
+    background: #008dff;
+}
+.wrapper{
+    width: 45%;
+    max-width: 550px;
+    padding: 30px;
+   border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: #ffffff;
+
+}
+.output{
+    background-color: #eef3f8;
+    width: 100%;
+    min-height: 250px;
+    padding: 20px 0;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+#blob{
+    height: 300px;
+    width: 300px;
+    /* position: absolute; */
+    background: linear-gradient(#44a2f0,#025eaa);
+    box-shadow: 15px 20px 30px rgba(0,0,0,0.15);
+}
+.dimensions{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px 0 40px 0;
+}
+label{
+    font-weight: 500;
+}
+input[type="number"]{
+    height: 40px;
+    width: 80px;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #a0a0b0;
+}
+input[type="number"]:focus{
+    background-color: #f1f5fa;
+    border-color: #025eaa;
+    color: #025eaa;
 }
