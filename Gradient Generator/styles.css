@@ -1,11 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-* {
+*,
+*:before,
+*:after {
     margin: 0;
     padding: 0;
     outline: none;
     box-sizing: border-box;
+    border: none;
+  
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 50px 30px;
+    width: 400px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 0.3em;
+    background-color: white;
+
+}
+.container *:not(i){
     font-family: "Roboto Mono", monospace;
-    font-weight: 500;
-    color: #010120;
+}
+.colors{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+ 
+}
+input[type="color"]{
+    -webkit-appearance: none;
+    background-color: transparent;
+    width: 100px;
+    height: 45px;
+    cursor: pointer;
+}
+input[type="color"]::-webkit-color-swatch{
+    border-radius: 20px;
+    border: none;
+}
+.buttons{
+
+    width: 100%;
+
 }
