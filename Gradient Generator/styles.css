@@ -23,7 +23,7 @@ body {
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
-    border-radius: 0.3em;
+    border-radius: 0.7em;
     background-color: white;
 
 }
@@ -48,7 +48,56 @@ input[type="color"]::-webkit-color-swatch{
     border: none;
 }
 .buttons{
-
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+.buttons button{
+    height: 35px;
+    width: 35px;
+    background: transparent;
+    border: 2px solid #d5d5d6;
+    color: #d5d5d6;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+.rotate-icon{
+    transform: rotate(45deg);
+}
+.buttons .active{
+    border: none;
+    background: #4a6ee0;
+    color: white;
+}
+#submit{
+    display: block;
+    background-color: #4a6ee0;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 12px 70px;
+    margin: 0 auto 30px auto;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+.output{
+    background-color: #f0f2fc;
+}
+#code{
     width: 100%;
-
+    resize: none;
+    color: #30304a;
+    padding: 10px 20px ;
+    background-color: transparent;
+}
+#copy{
+    font-size: 14px ;
+    background-color:#4a6ee0;
+    color: #ffffff;
+    position: relative;
+    left: 85%;
+    bottom: 10px;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
 }
