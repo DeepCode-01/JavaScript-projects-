@@ -1,4 +1,4 @@
-import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 *,
 *:before,
@@ -9,4 +9,42 @@ import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,30
     box-sizing: border-box;
     border: none;
   
+}
+body{
+    background-color: #e01a38;
+}
+.container{
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: absolute;
+    padding: 3em 2em;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 1em;
+}
+.input-container{
+    display: grid;
+    grid-template-columns: 9fr 2fr;
+    gap: 1em;
+}
+input{
+    padding: 1em 0.5em;
+    background-color: #F5F7F8;
+    box-shadow: 0 10px 15px rgb(0,0,0,0.2);
+    border: none;
+    outline: none;
+    border-radius: 0.5em;
+}
+button{
+    outline: none;
+    border: none;
+    background-color: #e01a38;
+    color: #ffffff;
+    border-radius: 0.5em;
+}
+.disply-container{
+    padding: 1em;
 }
