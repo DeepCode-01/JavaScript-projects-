@@ -22,3 +22,11 @@ const generateCode = () => {
     "BODY"
   )[0].style.backgroundImage = `linear-gradient(${currentDirection},${coloOne.value}, ${coloTwo.value})`;
 };
+
+const copyCode = ()=>{
+    outPut.select();
+    document.execCommand("copy");
+    alert("Gradient Code Copied!")
+}
+
+generateCode();
