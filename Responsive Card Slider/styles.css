@@ -9,5 +9,52 @@
     box-sizing: border-box;
     border: none;
     font-family: "Roboto";
-  
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(images/bg.jpg) #030728 no-repeat center;
+    min-height: 100vh;
+}
+
+.card-list .card-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 400px;
+    padding: 35px;
+    border-radius: 10px;
+    border:1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(30px);
+}
+
+.card-list .card-item .user-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    border: 1px solid #fff;
+    padding: 4px;
+}
+.card-list .card-item .user-profession{
+    font-size: 1.15rem;
+    color: #e3e3e3;
+    font-weight: 500;
+    margin: 14px 0 40px;
+}
+.card-list .card-item .msg-button{
+    font-size: 1.25em;
+    padding: 10px 35px;
+    color: #030728;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: #fff;
 }
