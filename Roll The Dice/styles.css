@@ -54,13 +54,13 @@ button{
 
 @keyframes shake {
     0%{
-        transform: rotate(8deg);
+        transform: rotate(10deg);
     }
     50%{
-        transform: rotate(-8deg);
+        transform: rotate(-10deg);
     }
     100%{
-        transform: rotate(8deg);
+        transform: rotate(10deg);
     }
   
 }

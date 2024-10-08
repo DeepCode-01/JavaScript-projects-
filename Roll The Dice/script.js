@@ -8,23 +8,24 @@ let image = [
 ];
 
 let dice = document.querySelectorAll("img");
+let total = document.getElementById("total");
 
-const rollDice = ()=>{
+const rollDice = () => {
+  dice.forEach((die) => {
+    die.classList.add("shake");
+  });
 
-    dice.forEach((die)=>{
-     die.classList.add("shake")
+  setTimeout(() => {
+    dice.forEach((die) => {
+      die.classList.remove("shake");
     });
 
-    setTimeout(()=>{
-        dice.forEach((die)=>{
-            die.classList.remove("shake")
-        })
+    let diceOneValue = Math.floor(Math.random() * 6);
+    let diceTwoValue = Math.floor(Math.random() * 6);
 
-        let diceOneValue = Math.floor(Math.random()*6)
-        let diceTwoValue = Math.floor(Math.random()*6)
-        
-       document.querySelector("#dice-1").setAttribute("src", image[diceOneValue]);
-       document.querySelector("#dice-2").setAttribute("src", image[diceTwoValue]);
+    document.querySelector("#dice-1").setAttribute("src", image[diceOneValue]);
+    document.querySelector("#dice-2").setAttribute("src", image[diceTwoValue]);
 
-    },1000)
-}
+    total.innerHTML = "Your Roll Is "  + ((diceOneValue + 1 ) + (diceTwoValue + 1));
+  }, 1000);
+};
