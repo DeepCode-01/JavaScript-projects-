@@ -2,6 +2,7 @@ let msg1 = document.getElementById("message1");
 let msg2 = document.getElementById("message2");
 let msg3 = document.getElementById("message3");
 let guess = document.getElementById("gussedNum");
+let btn = document.getElementById("btn")
 
 let answer = Math.floor(Math.random() * 100) + 1;
 let no_of_gueeses = 0;
@@ -33,6 +34,7 @@ const play = () => {
         msg1.textContent = "Yippiee! You win.You gussed it right 🎉"
         msg2.textContent= "The number was:" + answer   
         msg3.textContent = "You gussed it in: "+ no_of_gueeses + " gusses" 
+        btn.disabled = true;
     }
   }
 };
