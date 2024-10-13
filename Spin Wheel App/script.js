@@ -73,16 +73,63 @@ var myChart = new Chart(wheel, {
     animation: { duration: 0 },
     plugins: {
       tooltip: false,
-      legend:{
-        display:false
+      legend: {
+        display: false,
       },
-      datalabels:{
-        color:"#ffffff",
-        formatter: (_,context)=> context.chart.data.labels[context.dataIndex]
+      datalabels: {
+        color: "#ffffff",
+        formatter: (_, context) => context.chart.data.labels[context.dataIndex],
       },
-      font:{
-        size:28
-      }
+      font: {
+        size: 28,
+      },
     },
   },
+});
+
+const valueGenerator = (angleValue) => {
+  for (let i of rotationValue) {
+    if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
+      finalValue.innerHTML = `<p>Value: ${i.value}<p/>`;
+      spinBtn.disabled = false;
+      break;
+    }
+  }
+};
+
+// spinner count
+
+let count = 0;
+
+let resultValue = 101;
+// start spinning
+
+spinBtn.addEventListener("click", () => {
+  spinBtn.disabled = true;
+  finalValue.innerHTML = `<p>Good Luck!<p/>`;
+
+  // generate random degree to stop
+
+  let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
+
+  let rotationInterval = window.setInterval(() => {
+    myChart.options.roration = myChart.options.roration + resultValue;
+
+    // update chart width new value
+
+    myChart.update();
+
+    // reset the rotation
+
+    if (myChart.options.roration <= 360) {
+      count += 1;
+      resultValue -= 5;
+      myChart.options.roration = 0;
+    } else if (count > 15 && myChart.options.roration == randomDegree) {
+      valueGenerator(randomDegree);
+      clearInterval(rotationInterval);
+      count = 0;
+      resultValue = 101;
+    }
+  },0);
 });
