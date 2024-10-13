@@ -79,9 +79,9 @@ var myChart = new Chart(wheel, {
       datalabels: {
         color: "#ffffff",
         formatter: (_, context) => context.chart.data.labels[context.dataIndex],
-      },
-      font: {
-        size: 28,
+        font: {
+          size: 28,
+        },
       },
     },
   },
@@ -90,7 +90,7 @@ var myChart = new Chart(wheel, {
 const valueGenerator = (angleValue) => {
   for (let i of rotationValue) {
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-      finalValue.innerHTML = `<p>Value: ${i.value}<p/>`;
+      finalValue.innerHTML = `<p>Spin Value is ${i.value}<p/>`;
       spinBtn.disabled = false;
       break;
     }
@@ -113,23 +113,18 @@ spinBtn.addEventListener("click", () => {
   let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
 
   let rotationInterval = window.setInterval(() => {
-    myChart.options.roration = myChart.options.roration + resultValue;
-
-    // update chart width new value
-
+    myChart.options.rotation = (myChart.options.rotation || 0) + resultValue;
     myChart.update();
 
-    // reset the rotation
-
-    if (myChart.options.roration <= 360) {
+    if (myChart.options.rotation >= 360) {
       count += 1;
       resultValue -= 5;
-      myChart.options.roration = 0;
-    } else if (count > 15 && myChart.options.roration == randomDegree) {
+      myChart.options.rotation = 0;
+    } else if (count > 15 && myChart.options.rotation == randomDegree) {
       valueGenerator(randomDegree);
       clearInterval(rotationInterval);
       count = 0;
       resultValue = 101;
     }
-  },0);
+  }, 10); // Changed from 0 to 10ms
 });
