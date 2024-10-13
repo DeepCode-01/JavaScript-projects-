@@ -56,7 +56,7 @@ let peiColor = [
 var myChart = new Chart(wheel, {
   // plugin for text
 
-  Plugin: [ChartDataLabels],
+  plugins: [ChartDataLabels],
   type: "pie",
   data: {
     labels: [1, 2, 3, 4, 5, 6],
@@ -78,7 +78,10 @@ var myChart = new Chart(wheel, {
       },
       datalabels:{
         color:"#ffffff",
-        formatter: (_,context)=> context.chart.data.labels[context.data]
+        formatter: (_,context)=> context.chart.data.labels[context.dataIndex]
+      },
+      font:{
+        size:28
       }
     },
   },
