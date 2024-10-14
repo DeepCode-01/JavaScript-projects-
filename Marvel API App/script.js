@@ -3,9 +3,6 @@ let submit = document.getElementById("submit-button");
 let showContainer = document.getElementById("show-container");
 let listContainer = document.querySelector(".list");
 
-let date = new Date();
-const timestamp = date.getTime();
-
 const [ apiKey, hashValue] = [ publicKey, hashVal];
 
 submit.addEventListener("click", getResult);
@@ -18,9 +15,9 @@ async function getResult() {
             return;
         }
 
-        showContainer.innerHTML = ""; 
+        showContainer.innerHTML = "Loading..."; 
         
-        const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&name=${input.value}`;
+        const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${apiKey}&hash=${hashValue}&name=${input.value}`;
 
         const response = await fetch(url);
         const jsonData = await response.json();
@@ -31,6 +28,8 @@ async function getResult() {
                 showContainer.innerHTML = '<div class="error">No character found!</div>';
                 return;
             }
+
+            showContainer.innerHTML = ''; // Clear the loading message
 
             jsonData.data.results.forEach((element) => {
                 const imgPath = element.thumbnail.path;
@@ -57,7 +56,3 @@ async function getResult() {
         showContainer.innerHTML = '<div class="error">Something went wrong! Please try again.</div>';
     }
 }
-
-window.onload = () => {
- getResult()
-};
