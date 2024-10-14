@@ -76,3 +76,6 @@ button{
     line-height: 2em;
     font-weight: 300;
 }
+.list{
+    position: absolute;
+}
