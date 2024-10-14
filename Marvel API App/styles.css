@@ -78,4 +78,15 @@ button{
 }
 .list{
     position: absolute;
+    width: 65%;
+    background-color: #555;
+    color: #ffffff;
+    z-index: 1;
+}
+.autocomplete-item{
+    padding: 0.5em;
+}
+.autocomplete-item:hover{
+    background-color: #ddd;
+    color: #171821;
 }
