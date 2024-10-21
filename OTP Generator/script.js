@@ -8,17 +8,21 @@ function sendOTP() {
     return;
   }
 
-  let otp_val = Math.floor(Math.random() * 10000); 
+  let otp_val = Math.floor(Math.random() * 10000);
   let emailBody = `<h2>Your OTP is: ${otp_val}</h2>`;
 
+  // Log the email details for debugging
+  console.log("Sending email to:", email.value);
+  console.log("OTP value:", otp_val);
+
   Email.send({
-    SecureToken: "56b796d5-4772-422d-920d-33439f273c94",
+    SecureToken: "YOUR_SECURE_TOKEN_HERE", // Replace with your actual secure token
     To: email.value,
-    From: 'dv292901@gmail.com',
+    From: "YOUR_SENDER_EMAIL@example.com", // Replace with your sender email
     Subject: "Email OTP using JavaScript",
     Body: emailBody
   }).then(message => {
-    console.log("Email sending response: ", message);  // Log the response for debugging
+    console.log("Email sending response:", message);
     
     if (message.toLowerCase() === "ok") {
       alert("OTP sent to your email: " + email.value);
@@ -35,11 +39,10 @@ function sendOTP() {
         }
       });
     } else {
-      alert("Failed to send OTP. Response: " + message);  // Show the response message in case of failure
+      alert("Failed to send OTP. Response: " + message);
     }
   }).catch(error => {
-    console.error("Error sending email: ", error);  // Log the error for debugging
-    alert("An error occurred while sending the OTP.");
+    console.error("Error sending email:", error);
+    alert("An error occurred while sending the OTP. Check the console for details.");
   });
-  
 }
