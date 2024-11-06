@@ -8,29 +8,42 @@ function sendOTP() {
     return;
   }
 
-  let otp_val = Math.floor(Math.random() * 10000);
-  let emailBody = `<h2>Your OTP is: ${otp_val}</h2>`;
+  let otp_val = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+  let emailBody = `
+    <html>
+      <body>
+        <h2>Your One-Time Password (OTP)</h2>
+        <p>Your OTP for verification is: <strong>${otp_val}</strong></p>
+        <p>This OTP will expire in 10 minutes.</p>
+      </body>
+    </html>
+  `;
 
-  // Log the email details for debugging
   console.log("Sending email to:", email.value);
   console.log("OTP value:", otp_val);
 
   Email.send({
-    SecureToken: "YOUR_SECURE_TOKEN_HERE", // Replace with your actual secure token
+    SecureToken: "37f5d2d6-15d0-43d6-bbda-3f1633510fd4",
     To: email.value,
-    From: "YOUR_SENDER_EMAIL@example.com", // Replace with your sender email
-    Subject: "Email OTP using JavaScript",
+    From: "dv292901@gmail.com",
+    Subject: "Your OTP for verification",
     Body: emailBody
   }).then(message => {
     console.log("Email sending response:", message);
+    console.log("Full email details:", {
+      to: email.value,
+      from: "dv292901@gmail.com",
+      subject: "Your OTP for verification",
+      otp: otp_val
+    });
     
     if (message.toLowerCase() === "ok") {
       alert("OTP sent to your email: " + email.value);
       verify[0].style.display = "flex";
-  
+
       const otp_in = document.getElementById("otp-in");
       const otp_btn = document.getElementById("otp-btn");
-  
+
       otp_btn.addEventListener("click", () => {
         if (otp_in.value == otp_val) {
           alert("Email address verified.");
@@ -39,10 +52,11 @@ function sendOTP() {
         }
       });
     } else {
-      alert("Failed to send OTP. Response: " + message);
+      console.error("Failed to send OTP. Response:", message);
+      alert("Failed to send OTP. Error: " + message);
     }
   }).catch(error => {
     console.error("Error sending email:", error);
-    alert("An error occurred while sending the OTP. Check the console for details.");
+    alert("An error occurred while sending the OTP. Error: " + error.message);
   });
 }
